@@ -2,17 +2,403 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free ICA AI training page.">
-  <title>Free AI Training | Ideal Client Alliance</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Free ICA training showing you how to build an AI Operating System that understands your business."
+  >
+
+  <meta name="theme-color" content="#0d1020">
+
+  <title>AI Operating System Part 1 | Ideal Client Alliance</title>
+
   <link rel="stylesheet" href="css/styles.css">
+
   <script src="js/main.js" defer></script>
+
+  <style>
+    /* =========================================================
+       FREE TRAINING PAGE
+       Page-specific styling
+       ========================================================= */
+
+    .course-hero {
+      padding: 90px 0 70px;
+      text-align: center;
+    }
+
+    .course-hero .section-title {
+      max-width: 980px;
+      margin-inline: auto;
+    }
+
+    .course-hero .section-copy {
+      max-width: 780px;
+      margin-inline: auto;
+    }
+
+    .course-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(232, 93, 48, 0.25);
+      border-radius: 999px;
+      background: rgba(232, 93, 48, 0.08);
+      padding: 8px 14px;
+      color: var(--orange-light);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .course-statement {
+      display: block;
+      margin-top: 20px;
+      color: var(--white);
+      font-size: 1.08rem;
+      font-weight: 900;
+    }
+
+    .course-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .course-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .overview-card {
+      min-height: 170px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 22px;
+      text-align: left;
+    }
+
+    .overview-card span {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(232, 93, 48, 0.13);
+      color: var(--orange-light);
+      font-weight: 950;
+    }
+
+    .overview-card h3 {
+      margin-top: 20px;
+      font-size: 1.14rem;
+    }
+
+    .overview-card p {
+      margin-top: 8px;
+      color: var(--grey);
+      font-size: 0.88rem;
+    }
+
+    .video-section {
+      padding: 30px 0 90px;
+    }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      align-items: start;
+      gap: 26px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border-radius: 26px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-details {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+    }
+
+    .video-details h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .video-details p {
+      margin-top: 14px;
+      color: var(--grey);
+    }
+
+    .lesson-sidebar {
+      display: grid;
+      gap: 16px;
+    }
+
+    .sidebar-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 22px;
+    }
+
+    .sidebar-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .sidebar-card p {
+      margin-top: 9px;
+      color: var(--grey);
+      font-size: 0.9rem;
+    }
+
+    .lesson-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 17px;
+      list-style: none;
+    }
+
+    .lesson-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--grey);
+      font-size: 0.88rem;
+    }
+
+    .lesson-list li::before {
+      color: var(--orange-light);
+      content: "✓";
+      font-weight: 950;
+    }
+
+    .action-card {
+      border-color: rgba(232, 93, 48, 0.28);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(232, 93, 48, 0.12),
+          rgba(255, 255, 255, 0.025)
+        );
+    }
+
+    .resources-section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .resources-head {
+      max-width: 760px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .resource-card {
+      display: flex;
+      min-height: 230px;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background: rgba(255, 255, 255, 0.035);
+      padding: 23px;
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(232, 93, 48, 0.38);
+      background: rgba(232, 93, 48, 0.07);
+    }
+
+    .resource-icon {
+      display: grid;
+      width: 51px;
+      height: 51px;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(232, 93, 48, 0.13);
+      color: var(--orange-light);
+      font-size: 1.3rem;
+      font-weight: 950;
+    }
+
+    .resource-card h3 {
+      margin-top: 19px;
+      font-size: 1.2rem;
+    }
+
+    .resource-card p {
+      margin-top: 9px;
+      color: var(--grey);
+      font-size: 0.88rem;
+    }
+
+    .resource-card .button {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .resource-note {
+      margin-top: 24px;
+      border-left: 3px solid var(--orange);
+      border-radius: 0 15px 15px 0;
+      background: rgba(232, 93, 48, 0.07);
+      padding: 17px 19px;
+      color: var(--grey);
+    }
+
+    .resource-note strong {
+      color: var(--white);
+    }
+
+    .completion-section {
+      padding: 90px 0;
+    }
+
+    .completion-card {
+      overflow: hidden;
+      border-radius: 28px;
+      padding: clamp(30px, 6vw, 62px);
+      background:
+        radial-gradient(
+          circle at 86% 20%,
+          rgba(232, 93, 48, 0.2),
+          transparent 18rem
+        ),
+        linear-gradient(
+          135deg,
+          rgba(232, 93, 48, 0.14),
+          rgba(255, 255, 255, 0.035)
+        );
+    }
+
+    .completion-card h2 {
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+    }
+
+    .completion-card > p {
+      max-width: 710px;
+      margin-top: 18px;
+      color: var(--grey);
+    }
+
+    .completion-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .completion-step {
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: rgba(13, 16, 32, 0.55);
+      padding: 18px;
+    }
+
+    .completion-step strong {
+      display: block;
+      color: var(--orange-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .completion-step span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 850;
+    }
+
+    @media (max-width: 980px) {
+      .video-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .course-overview,
+      .completion-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .course-hero {
+        padding-top: 70px;
+      }
+
+      .course-overview,
+      .completion-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .course-actions {
+        display: grid;
+      }
+
+      .course-actions .button {
+        width: 100%;
+      }
+
+      .video-details,
+      .sidebar-card,
+      .resource-card {
+        padding: 19px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <header class="header">
   <div class="container nav">
+
     <a class="brand" href="index.html">
       <span class="brand-mark">ICA</span>
+
       <span>
         Ideal Client Alliance
         <small>Learn. Apply. Build.</small>
@@ -25,80 +411,551 @@
       <a href="explore-ica.html">Explore ICA</a>
     </nav>
 
-    <button class="mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
       ☰
     </button>
+
   </div>
 </header>
 
 <main>
-  <section class="page-hero">
+
+  <!-- ======================================================
+       COURSE INTRODUCTION
+       ====================================================== -->
+
+  <section class="course-hero">
+
     <div class="container">
-      <span class="eyebrow">Free ICA training</span>
-      <h1 class="section-title">Stop asking AI to <span class="orange">guess your business.</span></h1>
+
+      <span class="course-tag">
+        Free ICA Course
+      </span>
+
+      <span class="eyebrow">
+        AI Operating System Training
+      </span>
+
+      <h1 class="section-title">
+        AI Operating System
+        <span class="orange">(Part 1)</span>
+      </h1>
+
       <p class="section-copy">
-        This page is live and ready for your complete free training content. The structure below prevents a 404
-        and gives you a polished matching page from day one.
+        This training shows you how to build an AI Operating System
+        that actually knows your business, so you stop repeating
+        yourself and start creating faster, better marketing with
+        less effort.
       </p>
-      <div class="hero-actions" style="justify-content:center;">
-        <a class="button button-primary" href="#training-modules">View Training Modules</a>
-        <a class="button button-secondary" href="index.html">Back to Home</a>
+
+      <strong class="course-statement">
+        Build it once. Use it every day.
+      </strong>
+
+      <div class="course-actions">
+
+        <a
+          class="button button-primary"
+          href="#course-video"
+        >
+          Start the Training
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="#resources"
+        >
+          Download the Resources
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="index.html"
+        >
+          Back to Home
+        </a>
+
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="training-modules">
-    <div class="container">
-      <span class="eyebrow">Training structure</span>
-      <h2 class="section-title">Value first. <span class="orange">Pitch second.</span></h2>
-      <p class="section-copy">
-        Replace these placeholders with your final lessons, videos and downloadable prompts.
-      </p>
+      <div class="course-overview">
 
-      <div class="placeholder-grid">
-        <article class="placeholder-card">
+        <article class="overview-card">
           <span>01</span>
-          <h3>Why Generic AI Content Fails</h3>
-          <p>Explain the real problem and give visitors a reason to care before teaching the solution.</p>
+
+          <h3>Understand the problem</h3>
+
+          <p>
+            See why ChatGPT gives generic answers when it does not
+            understand your business, audience or goals.
+          </p>
         </article>
 
-        <article class="placeholder-card">
+        <article class="overview-card">
           <span>02</span>
-          <h3>Build Your Business Context</h3>
-          <p>Help the visitor define their audience, problem, evidence, solution and communication style.</p>
+
+          <h3>Build your AI foundation</h3>
+
+          <p>
+            Define your identity, audience, principles, writing style
+            and content strategy.
+          </p>
         </article>
 
-        <article class="placeholder-card">
+        <article class="overview-card">
           <span>03</span>
-          <h3>Create Useful Content</h3>
-          <p>Give them a practical prompt, example and next action they can use immediately.</p>
+
+          <h3>Create your operating system</h3>
+
+          <p>
+            Turn your business information into a reusable system
+            that works with you every day.
+          </p>
         </article>
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="cta-section">
+
+  <!-- ======================================================
+       VIDEO LESSON
+       ====================================================== -->
+
+  <section
+    class="video-section"
+    id="course-video"
+  >
+
     <div class="container">
-      <div class="cta-card glass">
-        <span class="eyebrow">Continue with ICA</span>
-        <h2>Get the free value first.<br><span class="orange">Then choose your next step.</span></h2>
-        <p>
-          Join the WhatsApp community for ongoing guidance or explore the ICA Pro Hub for structured support.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://chat.whatsapp.com/ElAxhWWs9pXEI2l2cNnXFE?s=cl&p=i&ilr=4" target="_blank" rel="noopener">Join Free WhatsApp Community</a>
-          <a class="button button-secondary" href="https://stan.store/lrmobi" target="_blank" rel="noopener">Explore ICA Pro Hub</a>
-        </div>
+
+      <div class="video-layout">
+
+        <article class="video-card glass">
+
+          <div class="video-wrapper">
+
+            <iframe
+              src="https://www.youtube.com/embed/I6OfOA8sbFc?rel=0"
+              title="AI Operating System Part 1"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+          </div>
+
+          <div class="video-details">
+
+            <span class="eyebrow">
+              Lesson 1
+            </span>
+
+            <h2>
+              AI Operating System
+              <span class="orange">(Part 1)</span>
+            </h2>
+
+            <p>
+              This lesson shows you how to stop treating ChatGPT like
+              a blank tool and start building an AI system that
+              understands who you are, who you help and how your
+              business works.
+            </p>
+
+            <p>
+              Download the resources below and work through them while
+              watching the lesson. Do not only watch the training.
+              Build your own operating system as you go.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <aside class="lesson-sidebar">
+
+          <article class="sidebar-card">
+
+            <h3>
+              What you will build
+            </h3>
+
+            <ul class="lesson-list">
+
+              <li>
+                A clear description of who you are and what you stand for
+              </li>
+
+              <li>
+                A definition of the person your business helps
+              </li>
+
+              <li>
+                Your business and marketing principles
+              </li>
+
+              <li>
+                Instructions for how ChatGPT should think
+              </li>
+
+              <li>
+                Your preferred writing and communication style
+              </li>
+
+              <li>
+                A reusable AI Operating System
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <article class="sidebar-card action-card">
+
+            <span class="eyebrow">
+              Important
+            </span>
+
+            <h3>
+              Do not rush this training
+            </h3>
+
+            <p>
+              Your answers become the foundation of your AI system.
+              Clear and honest answers will produce stronger results
+              than impressive-sounding answers.
+            </p>
+
+            <a
+              class="button button-primary"
+              href="#resources"
+              style="width:100%; margin-top:18px;"
+            >
+              Get the Resources
+            </a>
+
+          </article>
+
+        </aside>
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- ======================================================
+       DOWNLOADABLE RESOURCES
+       ====================================================== -->
+
+  <section
+    class="resources-section"
+    id="resources"
+  >
+
+    <div class="container">
+
+      <div class="resources-head">
+
+        <span class="eyebrow">
+          Free course resources
+        </span>
+
+        <h2 class="section-title">
+          Download everything you need to
+          <span class="orange">build with the training.</span>
+        </h2>
+
+        <p class="section-copy">
+          These resources are designed to be used alongside the
+          lesson. Download them before watching or keep them open
+          while you work through the training.
+        </p>
+
+      </div>
+
+
+      <div class="resource-grid">
+
+        <!-- Resource 1 -->
+
+        <article class="resource-card">
+
+          <span class="resource-icon">
+            PDF
+          </span>
+
+          <h3>
+            Build Your Own AI Operating System
+          </h3>
+
+          <p>
+            The main master prompt and worksheet. Use it to define
+            your mission, audience, transformation, principles,
+            writing style, content strategy and AI role.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="resources/buildyourownaioperatingsystemmasterprompt.pdf"
+            download
+          >
+            Download Master Prompt
+          </a>
+
+        </article>
+
+
+        <!-- Resource 2 -->
+
+        <article class="resource-card">
+
+          <span class="resource-icon">
+            PDF
+          </span>
+
+          <h3>
+            ICA AI Business Interview Prompt
+          </h3>
+
+          <p>
+            Use this prompt when you want ChatGPT to interview you
+            one question at a time and collect the information needed
+            to build your AI Operating System.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="resources/icaaibusinessinterviewprompt.pdf"
+            download
+          >
+            Download Interview Prompt
+          </a>
+
+        </article>
+
+
+        <!-- Resource 3 -->
+
+        <article class="resource-card">
+
+          <span class="resource-icon">
+            PDF
+          </span>
+
+          <h3>
+            Nathan's Completed AI Operating System
+          </h3>
+
+          <p>
+            A completed example showing how Nathan's mission, ICA
+            positioning, business philosophy, content strategy and
+            writing instructions work together.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="resources/masteraipromptexamplenathansanswers.pdf"
+            download
+          >
+            Download Nathan's Example
+          </a>
+
+        </article>
+
+
+        <!-- Resource 4 -->
+
+        <article class="resource-card">
+
+          <span class="resource-icon">
+            PDF
+          </span>
+
+          <h3>
+            LiveGood Affiliate AI Operating System
+          </h3>
+
+          <p>
+            A second completed example demonstrating how the same
+            framework can be adapted to a completely different
+            business, audience and offer.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="resources/livegoodaffiliateaioperatingsystemexample.pdf"
+            download
+          >
+            Download LiveGood Example
+          </a>
+
+        </article>
+
+
+        <!-- Resource 5 -->
+
+        <article class="resource-card">
+
+          <span class="resource-icon">
+            PDF
+          </span>
+
+          <h3>
+            The 10 Commandments Prompt
+          </h3>
+
+          <p>
+            Behavioural instructions that teach ChatGPT to prioritise
+            truth, clarity, complete work, useful examples and
+            practical recommendations.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="resources/the10commandmentsprompt.pdf"
+            download
+          >
+            Download the 10 Commandments
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <div class="resource-note">
+
+        <strong>Before starting the video:</strong>
+
+        Download all five resources. Begin with the Master Prompt or
+        the Business Interview Prompt. Use Nathan's completed example
+        and the LiveGood example when you need to see what a finished
+        operating system should look like.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       COURSE COMPLETION
+       ====================================================== -->
+
+  <section class="completion-section">
+
+    <div class="container">
+
+      <div class="completion-card glass">
+
+        <span class="eyebrow">
+          Complete the training
+        </span>
+
+        <h2>
+          Do not just watch it.
+          <br>
+          <span class="orange">
+            Build your system.
+          </span>
+        </h2>
+
+        <p>
+          By the end of this training, you should have a completed
+          AI Operating System that you can paste into ChatGPT and use
+          as the foundation for your future content, marketing and
+          business work.
+        </p>
+
+        <div class="completion-steps">
+
+          <article class="completion-step">
+            <strong>Step 1</strong>
+            <span>Download all resources</span>
+          </article>
+
+          <article class="completion-step">
+            <strong>Step 2</strong>
+            <span>Watch the full training</span>
+          </article>
+
+          <article class="completion-step">
+            <strong>Step 3</strong>
+            <span>Complete your answers</span>
+          </article>
+
+          <article class="completion-step">
+            <strong>Step 4</strong>
+            <span>Build and save your system</span>
+          </article>
+
+        </div>
+
+        <div class="course-actions">
+
+          <a
+            class="button button-primary"
+            href="https://chat.whatsapp.com/ElAxhWWs9pXEI2l2cNnXFE?s=cl&p=i&ilr=4"
+            target="_blank"
+            rel="noopener"
+          >
+            Join Free WhatsApp Community
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://stan.store/lrmobi"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore ICA Pro Hub
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="index.html"
+          >
+            Back to Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
 </main>
 
+
 <footer class="footer">
+
   <div class="container footer-inner">
-    <span>© <span data-year></span> Ideal Client Alliance.</span>
-    <span>Learn it. Apply it. Build with it.</span>
+
+    <span>
+      © <span data-year></span> Ideal Client Alliance.
+    </span>
+
+    <span>
+      Build it once. Use it every day.
+    </span>
+
   </div>
+
 </footer>
+
 </body>
 </html>
